@@ -1,0 +1,7 @@
+<%= simple_form_for @news, url: project_news_index_path  do |f| %>
+  <%= f.input :title %>
+  <%= f.input :summary %>
+  <%= f.input :description %>
+  <%= f.association :author %>
+  <%= f.button :submit %>
+<% end %>

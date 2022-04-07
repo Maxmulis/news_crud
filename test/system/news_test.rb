@@ -8,19 +8,17 @@ class NewsTest < ApplicationSystemTestCase
   end
 
   test 'Creating a valid newsentry' do
-    visit projects_url
+    visit projects_path
 
     assert_selector 'h1', text: 'All Projects'
     click_on 'Testprojekt'
-    click_on 'Create new newsentry'
+    click_on 'Create new news entry'
 
-    assert_selector 'h1', text:'New newsentry'
     fill_in 'Title', with: 'New news'
     fill_in 'Description', with: 'New Description'
 
     select 'aschmidt', from: 'Author'
-    select 'Testprojekt', from: 'Project'
-    click_on 'Create newsentry'
+    click_on 'Create News'
 
     assert_text 'New news'
   end
