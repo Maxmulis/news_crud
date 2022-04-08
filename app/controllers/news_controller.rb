@@ -1,5 +1,13 @@
 class NewsController < ApplicationController
 
+  def index
+    case params[:order]
+      when 'alphabetical' then @news = News.order(title: :desc)
+      when 'oldest_first' then @news = News.order(created_on: :desc)
+      else @news = News.order(created_on: :asc)
+    end
+  end
+
   def show
     @news = News.find(params[:id])
   end

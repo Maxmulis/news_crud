@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :news, only: [ :show, :destroy ]
+  resources :news, only: [ :show, :destroy, :index ]
 
   resources :projects, only: [ :index, :show ] do
     resources :news, only: [ :new, :create ]
