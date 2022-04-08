@@ -1,0 +1,7 @@
+<h1><%= @user.login %></h1>
+<p><%= @user.firstname %></p>
+<p><%= @user.lastname %></p>
+
+<%= render partial: 'news/news', collection: @news %>
+
+<%= button_to "Delete all news", user_delete_all_path, method: 'delete' %>
